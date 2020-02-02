@@ -64,11 +64,24 @@ class stdresult(models.Model):
     def __str__(self):
         return self.grate
 
-
+salaryofmonth = (
+    ('January','January'),
+    ('February','February'),
+    ('March','March'),
+    ('April','April'),
+    ('May','May'),
+    ('June','June'),
+    ('July','July'),
+    ('August','August'),
+    ('September','September'),
+    ('October','October'),
+    ('November','November'),
+    ('December','December')
+)
 
 class stdaccountingsite(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="stdaccountingsite")
-    selary_month = models.CharField(max_length=30)
+    selary_month = models.CharField(choices=salaryofmonth, default='January', max_length=30)
     monthof_amount = models.CharField(max_length=30)
 
     def __str__(self):

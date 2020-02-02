@@ -38,8 +38,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Student User Name</th>
+      <th scope="col">Serial</th>
       <th scope="col">Subject Name</th>
       <th scope="col">Subject code</th>
     </tr>
@@ -48,7 +47,6 @@
     {% for data in data %}
     <tr>
       <td>{{ data.id}}</td>
-      <td>{{ data.user}}</td>
       <td>{{ data.stdsubjectentry}}</td>
       <td>{{ data.subject_code}}</td>
     </tr>

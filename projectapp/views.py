@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import UserLoginForms
 from .forms import BookForm
+from .forms import NoticeForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
@@ -11,6 +12,7 @@ from .models import Stdsubjectentry
 from .models import stdsubjectlist 
 from .models import stdclassrouting 
 from .models import stdresult, teacherform 
+from .models import stdaccountingsite
 
 from django.core.mail import send_mail
 from django.conf import settings
@@ -62,6 +64,8 @@ def stformfil(request):
 
 
 
+
+
 def stdsave(request):
 	print(request.POST)
 	applicant_name = request.GET['applicant_name']
@@ -94,8 +98,10 @@ def teacher(request):
 	 
 	return render(request, 'teacher.html',   context)
 
+
 def emplyeepage(request):
-	return render(request, 'emplyee.html')
+	data = stdaccountingsite.objects.all()
+	return render(request, 'emplyee.html', {'data':data})
 
 def collegemanagement(request):
 	note = stdnotice.objects.all().order_by('-pk')
