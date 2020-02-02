@@ -38,7 +38,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Id</th>
+      <th scope="col">Student Name</th>
       <th scope="col">Subject Name</th>
       <th scope="col">Result Point</th>
       <th scope="col">Grate</th>
@@ -47,17 +47,17 @@
   <tbody>
     {% for result in result %}
     <tr>
-      <td>{{ result.id}}</td>
+      <td>{{ result.user}}</td>
       <td>{{ result.stdsubjectentry}}</td>
       <td>{{ result.result_point}}</td>
       <td>{{ result.grate}}</td>
-    </tr>
     {% endfor %}
+    </tr>
   </tbody>
 </table>
   </div>
  
-
+ 
 
 
 

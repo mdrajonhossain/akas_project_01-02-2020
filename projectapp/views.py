@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import UserLoginForms
+from .forms import BookForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
@@ -84,7 +85,14 @@ def student(request):
 
 
 def teacher(request):
-	return render(request, 'teacher.html')
+	form = BookForm()
+	if request.method == 'POST':
+		form = BookForm(request.POST)
+		if form.is_valid():
+			form.save()
+	context = {'form': form}
+	 
+	return render(request, 'teacher.html',   context)
 
 def emplyeepage(request):
 	return render(request, 'emplyee.html')

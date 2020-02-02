@@ -56,13 +56,15 @@ class stdclassrouting(models.Model):
 
 
 class stdresult(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="stdresult")
-    stdsubjectentry = models.ForeignKey(Stdsubjectentry, on_delete=models.CASCADE, related_name="stdresult")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="stdresultt")
+    stdsubjectentry = models.ForeignKey(Stdsubjectentry, on_delete=models.CASCADE, related_name="stdresultd")
     result_point = models.CharField(max_length=30)
     grate = models.CharField(max_length=30)
 
     def __str__(self):
         return self.grate
+
+
 
 class stdaccountingsite(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="stdaccountingsite")

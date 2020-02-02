@@ -36,13 +36,14 @@
 </center>
 {% for note in note %}
 <p>
-  <a class="text-left text-danger bg-warning btn btn-primary btn-lg btn-block" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    {{note.noticehead_name}}
+  <a class="text-left text-danger btn btn-primary btn-lg btn-block" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Notice Title : {{note.noticehead_name}}
   </a>
 </p>
 
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
+    <h4 class="text-left text-danger">Notice Description</h4>
     {{note.description_notice}}
   </div>
 </div>
