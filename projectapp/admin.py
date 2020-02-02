@@ -28,3 +28,14 @@ admin.site.register(Logintype)
 
 
 admin.site.register(teacherform)
+
+
+
+
+
+
+
+
+
+# admin customization
+admin.site.site_header = "Admin Login System"
